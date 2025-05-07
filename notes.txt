@@ -1,0 +1,30 @@
+npm i
+npm i -D sequelize-cli
+npx sequelize init
+
+! making model, migration // no need to run
+npx sequelize db:create
+npx sequelize model:create --name User --attributes username:string,email:string,password:string,fullName:string,address:string,role:st
+ring
+npx sequelize model:create --name Category --attributes name:string
+npx sequelize model:create --name Store --attributes name:string
+npx sequelize migration:create --name add-UserId-to-Stores
+npx sequelize model:create --name Product --attributes name:string,price:integer,description:string,CategoryId:integer,StoreId:integer
+npx sequelize model:create --name Cart --attributes UserId:integer
+npx sequelize model:create --name CartProducts --attributes quantity:integer,totalPrice:integer,ProductId:integer,CartId:integer
+npx sequelize seed:create --name seed-all
+
+! run migration on your local device
+npx sequelize db:migrate
+
+
+
+getter --> get joindate() untuk ditampilin di profil pas kita edit profil. yang bisa diganti itu cuma fullName sama address
+helper buat format rupiah di landing page/ cart
+static method --> fitur utama di navbar buat filter by Category
+search Product.name
+promise chaining --> delete dari cart
+quantity --> getter pcs kayak 
+
+
+

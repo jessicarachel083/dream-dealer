@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Tempat Tidur Minimalis",
+    "price": 4000000,
+    "description": "Bergaya modern dan minimalis",
+    "CategoryId": 1,
+    "imageUrl": "https://walkeredison.com/cdn/shop/files/00c97e52359acce2b572f7c894d89e31065e8866_f1b80202-f85f-4bd9-9e5c-c28e2e7ed31e_800x.jpg?v=1721155436"
+  },
+  {
+    "name": "Ranjang Tingkat",
+    "price": 2700000,
+    "description": "Ranjang tingkat cocok untuk kamar anak",
+    "CategoryId": 1,
+    "imageUrl": "https://boori.com.au/cdn/shop/files/BK-NASMBBSC_grande.jpg?v=1745904861"
+  },
+  {
+    "name": "Tempat Tidur Besi",
+    "price": 1000000,
+    "description": "Paling murah beli di sini",
+    "CategoryId": 1,
+    "imageUrl": "https://i.ebayimg.com/images/g/WvEAAOSw8IBlqdsj/s-l400.jpg"
+  },
+  {
+    "name": "Kasur Springbed King Premium",
+    "price": 2100000,
+    "description": "Hotel bed mattress topper",
+    "CategoryId": 1,
+    "imageUrl": "https://mattressexpressny.com/wp-content/uploads/2019/07/The-Number-Bed-by-Instant-Comfort-Q9-angle.jpg"
+  },
+  {
+    "name": "Sprei Polos King 200x200",
+    "price": 150000,
+    "description": "Sprei lembut anti debu",
+    "CategoryId": 2,
+    "imageUrl": "https://ae01.alicdn.com/kf/Se3d45beab1fc4b908a36b971917dc4c30.jpg_640x640q90.jpg"
+  },
+  {
+    "name": "Duvet Luxury Comfortable",
+    "price": 700000,
+    "description": "Bed cover dengan efek weighted",
+    "CategoryId": 2,
+    "imageUrl": "https://www.sferra.com/cdn/shop/files/CloisterDuvetCover.jpg?v=1692044653"
+  },
+  {
+    "name": "Selimut Bulu Halus",
+    "price": 50000,
+    "description": "Untuk queen size",
+    "CategoryId": 2,
+    "imageUrl": "https://ak1.ostkcdn.com/images/products/is/images/direct/8586b42cf84ea9f4f359249df9392d36daa155f3/Nestl-Cut-Plush-Fleece-Throw-Blanket---Lightweight-Super-Soft-Fuzzy-Luxury-Bed-Blanket-for-Bed.jpg?impolicy=medium"
+  },
+  {
+    "name": "Bed Cover Set",
+    "price": 520000,
+    "description": "Satu set bed cover dengan sarung bantal",
+    "CategoryId": 2,
+    "imageUrl": "https://romantic-fairytale.com/cdn/shop/files/01_e3f0e65c-b671-4ff6-87f1-71e1a9aa0b89.jpg?v=1738732731&width=800"
+  },
+  {
+    "name": "Memory Foam",
+    "price": 55000,
+    "description": "Bantal kepala squishy",
+    "CategoryId": 3,
+    "imageUrl": "https://www.theramed.com.au/uploads/thumb/jpg/150/800x800/uploads/images/products/150/A100011300-l-3-Complete_Sleeprrr_Pillow-gel-extra_soft.jpg"
+  },
+  {
+    "name": "Set Bantal (Tanpa Sarung Bantal)",
+    "price": 180000,
+    "description": "Bantal kepala dan guling premium",
+    "CategoryId": 3,
+    "imageUrl": "https://baby-loop.com/wp-content/uploads/2021/11/a7d24629-bc4b-4781-b0fe-e3de48829217.jpg.jpg"
+  },
+  {
+    "name": "Bantal Dekorasi Motif",
+    "price": 25000,
+    "description": "Bantal dekorasi untuk tempat tidur",
+    "CategoryId": 3,
+    "imageUrl": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/9009d563aab5c4785eab1d2edc201014.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
+  }
+]

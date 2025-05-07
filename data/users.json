@@ -1,0 +1,14 @@
+[
+    {
+        "username": "useraccount1",
+        "email": "useraccount1@gmail.com",
+        "password": "useraccount1",
+        "role": "buyer"
+    },
+    {
+        "username": "selleraccount1",
+        "email": "selleraccount1@gmail.com",
+        "password": "selleraccount1",
+        "role": "seller"
+    }
+]

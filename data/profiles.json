@@ -1,0 +1,14 @@
+[
+    {
+        "fullName": "Abdul",
+        "address": "abdul@gmail.com",
+        "phoneNumber": "021-7890987",
+        "UserId": 1
+    }, 
+    {
+        "fullName": "Rachel",
+        "address": "rachel@gmail.com",
+        "phoneNumber": "021-5262738",
+        "UserId": 2
+    }
+]
