@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landingPage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('_navBar') %>
+
+    <!-- welcoming -->
+    <div class="bg-primary text-white py-4">
+        <div class="container text-center">
+            <h1 class="display-5 mb-2">Welcome to Dream-Dealer!</h1>
+            <p class="lead">bla bla blaaaaaaa......</p>
+        </div>
+    </div>
+
+    <!-- hot item -->
+    <div class="container py-4">
+        <h3 class="mb-4">
+            <i class="fas fa-fire text-primary"></i> Hot Items
+        </h3>
+        <!-- cart  -->
+        <div class="row d-flex flex-wrap">
+            <% data.forEach(el => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="<%= el.imageUrl %>" alt="Photo">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= el.name %></h5>
+                            <p class="card-text"><%= el.description %></p>
+                            <p class="text-danger mb-1"><%= formatPrice(el.price) %></p>
+                            <a href="#" class="btn btn-primary">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('_link') %>
+    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+</body>
+</html>
