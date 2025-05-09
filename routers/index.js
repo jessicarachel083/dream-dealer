@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router()
+const router = express.Router();
 
 const Controller = require("../controllers/controller");
 const Authentification = require("../controllers/authentification");
@@ -12,7 +12,14 @@ const Authentification = require("../controllers/authentification");
 //         next()
 //     }
 //   }
-
+const isLoggedIn = function (req, res, next) {
+    if (!req.session.userId) {
+        const error = "Please log in first!";
+        res.redirect(`/login?error=${error}`);
+    } else {
+        next();
+    }
+};
 
 // home routes
 router.get("/", Controller.homepage);
@@ -21,10 +28,14 @@ router.get("/bedcover", Controller.bedcover);
 router.get("/cushions", Controller.cushions);
 // router.get("/search", Controller.search);
 
-// router.get("/cart", access , Controller.cart);
-// router.get("/:idproduct/addtocart", access, Controller.addToCart);
-// router.get("/cart/:idcart/delete/:idproduct", access, Controller.deleteProductCart);
-// router.get("/cart/:idcart/payment", access, Controller.cartPayment);
+router.get("/cart", isLoggedIn, Controller.cart);
+router.get("/:idproduct/addtocart", isLoggedIn, Controller.addToCart);
+router.get(
+    "/cart/:idcart/delete/:idproduct",
+    isLoggedIn,
+    Controller.deleteProductCart
+);
+router.get("/cart/:idcart/payment", isLoggedIn, Controller.cartPayment);
 // router.get("/product/add", access, Controller.testingRoute);
 // router.post("/product/add", access, Controller.testingRoute);
 // router.get("/profile", access, Controller.getProfile);
@@ -35,20 +46,11 @@ router.get("/cushions", Controller.cushions);
 // router.get('/admin/stores', access, AdminController.getAllStores)
 // router.get('/admin/users', access, AdminController.getAllUsers)
 
-const isLoggedIn = function (req, res, next) {
-    if (!req.session.userId) {
-        const error = "Please log in first!"
-        res.redirect(`/login?error=${error}`)
-    } else {
-        next()
-    }
-}
-
 router.get("/register", Authentification.getRegister);
 router.post("/register", Authentification.postRegister);
 router.get("/login", Authentification.getLogin);
 router.post("/login", Authentification.postLogin);
-router.get("/logout", Authentification.logout)
+router.get("/logout", Authentification.logout);
 
 router.get("/", isLoggedIn, Authentification.dummyhome);
 
@@ -74,10 +76,6 @@ router.post("/profile", isLoggedIn, Controller.postProfile);
 // router.get('/admin', access, AdminController.dashboard)
 // router.get('/admin/stores', access, AdminController.getAllStores)
 // router.get('/admin/users', access, AdminController.getAllUsers)
-
-
-
-
 
 //DRAFT - PLEASE IGNORE
 
@@ -135,6 +133,5 @@ router.post("/profile", isLoggedIn, Controller.postProfile);
 //     console.log("Hello world", Date.now());
 //     next()
 // }
-
 
 module.exports = router;

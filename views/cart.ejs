@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart</title>
+    </head>
+    <body>
+        <%- include('_navBar') %> <%- include('_link') %> <% if (status) { %>
+        <div
+            class="container d-flex justify-content-center align-items-center vh-50 text-center"
+        >
+            <div>
+                <h1 class="display-3">Terima kasih telah belanja di sini 📦</h1>
+                <p class="lead">Barangmu akan segera diantarkan</p>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="container my-5">
+            <% if (notif) { %>
+            <h2 class="text-primary mb-4">Your Shopping Cart</h2>
+            <p style="color: red">Product <%= notif %> has been removed</p>
+            <a href="/" class="btn btn-warning">Kembali belanja lagi</a>
+            <% } %> <% if (!status) { %>
+
+            <div class="cart-container">
+                <table class="table table-bordered text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price (Rp)</th>
+                            <th>Quantity</th>
+                            <th>Total Price (Rp)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.CartProducts.forEach(el => { %>
+                        <tr>
+                            <td><%= el.Product.name %></td>
+                            <td><%= formatPrice(el.Product.price) %></td>
+                            <td><%= el.pcsFormat %></td>
+                            <td>
+                                <%= formatPrice(el.Product.price * el.quantity)
+                                %>
+                            </td>
+                            <td>
+                                <a
+                                    href="/cart/<%= el.id %>/delete/<%= el.Product.id %>"
+                                    class="btn btn-danger"
+                                    ><i class="fas fa-trash-alt">Remove</i>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                >
+                    Proceed to Checkout
+                </button>
+                <% } %>
+                <br />
+                <br />
+                <div>
+                    <a href="/" class="btn btn-primary">Kembali belanja</a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            QR Payment
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="<%= qr %>" alt="QR Payment" width="300" />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <a
+                            href="/cart/<%= data.id %>/payment"
+                            class="btn btn-primary"
+                            >Pay</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
